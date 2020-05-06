@@ -37,6 +37,12 @@ jobs:
       working-directory: ${{runner.workspace}}/build
       shell: bash
       run: cmake --build .
+      
+    # Lets scan ADALM2000 devices on usb
+    - name: Scan ADALM2000 Device
+      working-directory: ${{runner.workspace}}/build/tools/m2kcli
+      shell: bash
+      run: ./m2kcli --scan
     
     # Lets make that led blink
     - name: Identify ADALM200 Device
