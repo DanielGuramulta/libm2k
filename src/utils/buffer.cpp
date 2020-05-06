@@ -314,7 +314,7 @@ void Buffer::getSamples(std::vector<unsigned short> &data, unsigned int nb_sampl
 
 
 	if (ret < 0) {
-		destroy();
+		// destroy();
 		throw_exception(EXC_INVALID_PARAMETER, "Buffer: Cannot refill RX buffer");
 	}
 
@@ -349,7 +349,7 @@ const unsigned short* Buffer::getSamplesP(unsigned int nb_samples)
 
 
 	if (ret < 0) {
-		destroy();
+		// destroy();
 		throw_exception(EXC_INVALID_PARAMETER, "Buffer: Cannot refill RX buffer");
 		return nullptr;
 	}
@@ -426,7 +426,7 @@ void* Buffer::getSamplesRawInterleavedVoid(unsigned int nb_samples)
 
 	ssize_t ret = iio_buffer_refill(m_buffer);
 	if (ret < 0) {
-		destroy();
+		// destroy();
 		throw_exception(EXC_INVALID_PARAMETER, "Buffer: Cannot refill RX buffer");
 		return nullptr;
 	}
